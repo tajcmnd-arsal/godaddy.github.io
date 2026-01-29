@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | DomainHub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .checkout {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+    .card {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+    .card h2 {
+      margin-bottom: 20px;
+    }
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+    .total {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+    .checkout input, .checkout select {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 14px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+    .pay-btn {
+      width: 100%;
+      padding: 16px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .pay-btn:hover {
+      background: #15803d;
+    }
+    @media(max-width: 900px) {
+      .checkout { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">DomainHub</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="dashboard.html">Dashboard</a>
+  </nav>
+</header>
+
+<div class="checkout">
+
+  <div class="card">
+    <h2>Billing Details</h2>
+    <input type="text" placeholder="Full Name" />
+    <input type="email" placeholder="Email Address" />
+    <input type="text" placeholder="Country" />
+
+    <h2 style="margin-top:30px;">Payment Method</h2>
+    <select>
+      <option>Credit / Debit Card</option>
+      <option>PayPal</option>
+      <option>Crypto (Demo)</option>
+    </select>
+    <input type="text" placeholder="Card Number" />
+    <input type="text" placeholder="Expiry Date" />
+    <input type="text" placeholder="CVV" />
+
+    <button class="pay-btn" onclick="completeOrder()">Complete Purchase</button>
+  </div>
+
+  <div class="card">
+    <h2>Order Summary</h2>
+    <div class="summary-item"><span>mycoolstartup.com</span><span>$12.99</span></div>
+    <div class="summary-item"><span>Domain Privacy</span><span>$0.00</span></div>
+    <div class="summary-item"><span>ICANN Fee</span><span>$0.18</span></div>
+    <hr style="margin:16px 0;">
+    <div class="summary-item total"><span>Total</span><span>$13.17</span></div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 DomainHub. Checkout demo only.
+</footer>
+
+<script>
+function completeOrder() {
+  alert('✅ Order completed! Redirecting to dashboard...');
+  window.location.href = 'dashboard.html';
+}
+</script>
+
+</body>
+</html>
